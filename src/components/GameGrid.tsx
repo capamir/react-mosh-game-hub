@@ -3,7 +3,7 @@ import useGames from "../hooks/useGames";
 import { GameCard, GameCardContainer, GameCardSkeleton } from "./index";
 
 const GameGrid = () => {
-  const { games, isLoading, error } = useGames();
+  const { data, isLoading, error } = useGames();
   const skeletons = [1, 2, 3, 4, 5, 6];
 
   if (error) return <Text>{error}</Text>;
@@ -19,7 +19,7 @@ const GameGrid = () => {
             <GameCardSkeleton />
           </GameCardContainer>
         ))}
-      {games.map((game) => (
+      {data.map((game) => (
         <GameCardContainer>
           <GameCard key={game.id} game={game} />
         </GameCardContainer>
