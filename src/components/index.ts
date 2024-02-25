@@ -8,3 +8,5 @@ export { default as GameCardContainer } from "./GameCardContainer";
 export { default as GenreList } from "./GenreList";
 export { default as PlatformSelector } from "./PlatformSelector";
 export { default as SortSelector } from "./SortSelector";
+export { default as SearchInput } from "./SearchInput";
+export { default as ColorModeSwitch } from "./ColorModeSwitch";
