@@ -5,6 +5,7 @@ import {
   GenreList,
   PlatformSelector,
   SortSelector,
+  GameHeading,
 } from "./components";
 import { useState } from "react";
 import { Genre } from "./hooks/useGenres";
@@ -40,22 +41,25 @@ function App() {
       </Show>
 
       <GridItem area="main">
-        <Flex paddingLeft={2} marginBottom={3}>
-          <Box marginRight={5}>
-            <PlatformSelector
-              onSelectPlatform={(platform) =>
-                setGameQuery({ ...gameQuery, platform })
+        <Box paddingLeft={2}>
+          <GameHeading gameQuery={gameQuery} />
+          <Flex marginBottom={3}>
+            <Box marginRight={5}>
+              <PlatformSelector
+                onSelectPlatform={(platform) =>
+                  setGameQuery({ ...gameQuery, platform })
+                }
+                selectedPlatform={gameQuery.platform}
+              />
+            </Box>
+            <SortSelector
+              onSelectSortOrder={(sortOrder) =>
+                setGameQuery({ ...gameQuery, sortOrder })
               }
-              selectedPlatform={gameQuery.platform}
+              sortOrder={gameQuery.sortOrder}
             />
-          </Box>
-          <SortSelector
-            onSelectSortOrder={(sortOrder) =>
-              setGameQuery({ ...gameQuery, sortOrder })
-            }
-            sortOrder={gameQuery.sortOrder}
-          />
-        </Flex>
+          </Flex>
+        </Box>
         <GameGrid gameQuery={gameQuery} />
       </GridItem>
     </Grid>
