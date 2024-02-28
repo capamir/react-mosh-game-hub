@@ -11,7 +11,7 @@ export interface Platform {
   slug: string;
 }
 
-const apiClient = new APIClient("/platforms/lists/parents");
+const apiClient = new APIClient<Platform>("/platforms/lists/parents");
 
 // const usePlatforms = () => useData<Platform>("/platforms/lists/parents");
 // const usePlatforms = () => ({ data: platforms, isLoading: false, error: null });
