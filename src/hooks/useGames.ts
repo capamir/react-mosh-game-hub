@@ -5,7 +5,7 @@ import { Platform } from "./usePlatforms";
 // import useData from './useData'
 // import { FetchResponse } from "./useData";
 // import { useQuery } from "@tanstack/react-query";
-
+import ms from "ms";
 export interface Game {
   id: number;
   name: string;
@@ -64,7 +64,7 @@ const useGames = (gameQuery: GameQuery) =>
     getNextPageParam: (lastPage, allPages) => {
       return lastPage.next ? allPages.length + 1 : undefined;
     },
-    staleTime: 24 * 60 * 60 * 1000,
+    staleTime: ms("24h"),
   });
 
 export default useGames;
