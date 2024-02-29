@@ -4,12 +4,9 @@ import useGames from "../hooks/useGames";
 import { GameCard, GameCardContainer, GameCardSkeleton } from "./index";
 import { GameQuery } from "../App";
 import React from "react";
+import useGameQueryStore from "../store";
 
-interface Props {
-  gameQuery: GameQuery;
-}
-
-const GameGrid: React.FC<Props> = ({ gameQuery }) => {
+const GameGrid = () => {
   const {
     data,
     isLoading,
@@ -17,7 +14,7 @@ const GameGrid: React.FC<Props> = ({ gameQuery }) => {
     isFetchingNextPage,
     fetchNextPage,
     hasNextPage,
-  } = useGames(gameQuery);
+  } = useGames();
   const skeletons = [1, 2, 3, 4, 5, 6];
 
   if (error) return <Text>{error.message}</Text>;
