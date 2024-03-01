@@ -35,14 +35,14 @@ const apiClient = new APIClient<Game>("games");
 //     staleTime: 60 * 60 * 1000,
 //   });
 
-type pageParam = { pageParam: number };
+// type pageParam = { pageParam: number };
 
 const useGames = () => {
   const gameQuery = useGameQueryStore((s) => s.gameQuery);
 
   return useInfiniteQuery<FetchResponse<Game>, Error>({
     queryKey: ["games", gameQuery],
-    queryFn: ({ pageParam = 1 }: pageParam) =>
+    queryFn: ({ pageParam = 1 }) =>
       apiClient.getAll({
         params: {
           genres: gameQuery.genreId,
