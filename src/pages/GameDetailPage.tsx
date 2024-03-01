@@ -1,7 +1,12 @@
 import { useParams } from "react-router-dom";
 import useGame from "../hooks/useGame";
 import { GridItem, Heading, SimpleGrid, Spinner } from "@chakra-ui/react";
-import { ExpandableText, GameAttributes, GameTrailer } from "../components";
+import {
+  ExpandableText,
+  GameAttributes,
+  GameScreenshots,
+  GameTrailer,
+} from "../components";
 
 const GameDetailPage = () => {
   const { slug } = useParams();
@@ -21,7 +26,7 @@ const GameDetailPage = () => {
           </GridItem>
           <GridItem>
             <GameTrailer gameId={game.id} />
-            {/* <GameScreenshots gameId={game.id} /> */}
+            <GameScreenshots gameId={game.id} />
           </GridItem>
         </SimpleGrid>
       )}
