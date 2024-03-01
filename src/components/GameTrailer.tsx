@@ -16,9 +16,7 @@ const GameTrailer = ({ gameId }: Props) => {
   return (
     <>
       {isLoading && <Spinner />}
-      {firstf && (
-        <video src={first.data[480]} poster={first.preview} controls />
-      )}
+      {first && <video src={first.data[480]} poster={first.preview} controls />}
     </>
   );
 };
