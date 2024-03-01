@@ -14,3 +14,4 @@ export { default as GameHeading } from "./GameHeading";
 export { default as Emoji } from "./Emoji";
 export { default as ExpandableText } from "./ExpandableText";
 export { default as GameAttributes } from "./GameAttributes";
+export { default as GameTrailer } from "./GameTrailer";
