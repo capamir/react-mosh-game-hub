@@ -3,20 +3,16 @@ import {
   GameGrid,
   GameHeading,
   GenreList,
-  Navbar,
   PlatformSelector,
   SortSelector,
-} from "./components";
+} from "../components";
 
-function App() {
+const HomePage = () => {
   return (
     <Grid
-      templateAreas={{ base: `"nav" "main"`, lg: `"nav nav" "aside main"` }}
+      templateAreas={{ base: `"main"`, lg: `"aside main"` }}
       templateColumns={{ base: "1fr", lg: "200px 1fr" }}
     >
-      <GridItem area="nav">
-        <Navbar />
-      </GridItem>
       <Show above="lg">
         <GridItem area="aside" paddingX={5} marginY={7}>
           <GenreList />
@@ -37,6 +33,6 @@ function App() {
       </GridItem>
     </Grid>
   );
-}
+};
 
-export default App;
+export default HomePage;
