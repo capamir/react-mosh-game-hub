@@ -12,3 +12,4 @@ export { default as SearchInput } from "./SearchInput";
 export { default as ColorModeSwitch } from "./ColorModeSwitch";
 export { default as GameHeading } from "./GameHeading";
 export { default as Emoji } from "./Emoji";
+export { default as ExpandableText } from "./ExpandableText";
